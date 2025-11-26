@@ -10,9 +10,6 @@ import google.generativeai as genai
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
 import docx
-'''from datasets import load_dataset
-from kaggle.api.kaggle_api_extended import KaggleApi'''
-import pandas as pd
 
 # --- CONSTANTS ---
 GEMINI_MODEL_NAME = 'models/gemini-2.0-flash'
@@ -104,56 +101,6 @@ def scrape_behavioral_questions():
     except requests.exceptions.RequestException:
         return None
 
-# --- HUGGING FACE + KAGGLE DATASETS ---
-@st.cache_data
-def load_external_dataset():
-    """
-    Loads interview question datasets from Hugging Face and Kaggle.
-    This function is cached to avoid re-downloading on every script run.
-    """
-    question_data = {}
-    # --- HUGGING FACE DATASET ---
-    try:
-        hf_token = os.getenv("HUGGINGFACE_API_KEY")
-        dataset = load_dataset("aniruddha/interview-questions-dataset", token=hf_token)
-        for row in dataset["train"]:
-            skill = row.get("skill", "").lower().strip()
-            question = row.get("question", "").strip()
-            if skill and question:
-                question_data.setdefault(skill, []).append(question)
-        print("✅ Loaded dataset from Hugging Face")
-    except Exception as e:
-        print(f"⚠️ Could not load Hugging Face dataset: {e}")
-    # --- KAGGLE DATASET ---
-    try:
-        api = KaggleApi()
-        api.authenticate()
-        print("✅ Kaggle API authenticated successfully!")
-        dataset_name = "tanmay111999/interview-questions-dataset"
-        data_path = "data/"
-        os.makedirs(data_path, exist_ok=True)
-        api.dataset_download_files(dataset_name, path=data_path, unzip=True)
-        for file in os.listdir(data_path):
-            if file.endswith(".csv"):
-                df = pd.read_csv(os.path.join(data_path, file))
-                for _, row in df.iterrows():
-                    skill = str(row.get("skill", "")).lower().strip()
-                    question = str(row.get("question", "")).strip()
-                    if skill and question:
-                        question_data.setdefault(skill, []).append(question)
-                print(f"✅ Kaggle dataset loaded successfully: {file}")
-                break
-    except Exception as e:
-        print(f"⚠️ Could not load Kaggle dataset: {e}")
-    # --- Fallback Dataset ---
-    if not question_data:
-        question_data = {
-            'python': ["What are Python decorators?", "Explain difference between list and tuple."],
-            'java': ["Explain OOP concepts in Java.", "Difference between JDK and JRE?"],
-            'sql': ["What is a primary key?", "Explain joins in SQL."]
-        }
-        print("⚠️ Using fallback questions (local static).")
-    return question_data
 
 BACKUP_QUESTIONS = load_external_dataset()
 
@@ -266,3 +213,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
