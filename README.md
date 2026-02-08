@@ -104,18 +104,18 @@ User interacts with AI for interview preparation
 ***Architecture Diagram***
 ```mermaid
 flowchart TD
-    A[User Uploads Resume<br/>(PDF / DOCX)] --> B[Resume Text Extraction<br/>(PyPDF / python-docx)]
-    B --> C[Skill Extraction<br/>(Google Gemini LLM)]
-    C --> D[Identified Skills]
+    A[User uploads resume (PDF, DOCX)] --> B[Resume text extraction]
+    B --> C[Skill extraction using Gemini LLM]
+    C --> D[Identified skills]
 
-    D --> E[Technical Question Retrieval<br/>(GeeksforGeeks, InterviewBit)]
-    D --> F[Behavioral Question Retrieval<br/>(The Muse)]
+    D --> E[Technical question retrieval]
+    D --> F[Behavioral question retrieval]
 
-    E --> G[Question Aggregation<br/>(RAG Layer)]
+    E --> G[RAG aggregation layer]
     F --> G
 
-    G --> H[Context-Aware Chatbot<br/>(Gemini LLM)]
-    H --> I[Streamlit Web Interface]
+    G --> H[Context-aware chatbot]
+    H --> I[Streamlit web interface]
 ```
 
 ***Installation & Setup***
