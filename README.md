@@ -120,21 +120,27 @@ flowchart TD
 ```
 
 ***Installation & Setup***
-Clone the Repository
+
+Clone the Repository:
 git clone https://github.com/MS123-D/AI-ResumeAnalyzer.git
 cd ai-resume-analyzer
 
 Install Dependencies
+
 pip install -r requirements.txt
 
 Configure Environment Variables
+
 Create a .env file in the project root:
+
 GOOGLE_API_KEY=your_google_gemini_api_key
 
-4️Run the Application
+Run the Application
+
 streamlit run app.py
 
 ***Usage***
+
 Launch the Streamlit app
 
 Upload your resume (PDF or DOCX)
