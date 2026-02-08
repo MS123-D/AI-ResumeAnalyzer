@@ -3,7 +3,9 @@
 An intelligent web application that analyzes resumes using a Retrieval-Augmented Generation (RAG) approach and generates personalized technical and behavioral interview questions.
 This project helps users prepare efficiently for interviews by combining LLM-based reasoning with real-world interview question sources.
 
-***Problem Statement:***
+---
+
+## Problem Statement:
 
 Interview preparation is often generic and time-consuming. Candidates struggle to identify which skills to focus on and which questions are most relevant to their profiles.
 
@@ -17,21 +19,23 @@ Generating tailored interview questions
 
 Providing an interactive chatbot for practice and feedback
 
-***Features***
+---
 
-**Resume Upload & Parsing**
+## Features
+
+## Resume Upload & Parsing
 
 Supports PDF and DOCX resumes
 
 Automatic text extraction
 
-***AI-Based Skill Extraction***
+## AI-Based Skill Extraction
 
 Uses Google Gemini LLM
 
 Identifies top technical and soft skills
 
-**Retrieval-Augmented Generation (RAG)**
+## Retrieval-Augmented Generation (RAG):
 
 Combines LLM output with real interview questions
 
@@ -39,7 +43,7 @@ Scrapes data from trusted platforms
 
 Multi-Source Question Retrieval
 
-**Technical questions from:**
+## Technical questions from:
 
 GeeksforGeeks
 
@@ -49,7 +53,7 @@ Behavioral questions from:
 
 The Muse
 
-**Context-Aware Interview Chatbot**
+## Context-Aware Interview Chatbot
 
 Remembers extracted skills
 
@@ -63,7 +67,9 @@ Built with Streamlit
 
 Session-based interaction handling
 
-***Tech Stack***
+---
+
+## Tech Stack
 
 Programming Language: Python
 
@@ -85,7 +91,9 @@ Environment Management: python-dotenv
 
 APIs: Google Generative AI API
 
-***System Workflow***
+---
+ 
+## System Workflow
 
 User uploads resume (PDF/DOCX)
 
@@ -101,7 +109,9 @@ Context-aware chatbot is initialized
 
 User interacts with AI for interview preparation
 
-### Architecture Diagram
+---
+
+## Architecture Diagram
 
 ```mermaid
 flowchart TD
@@ -119,7 +129,9 @@ flowchart TD
     H --> I[Streamlit web interface]
 ```
 
-***Installation & Setup***
+---
+
+## Installation & Setup
 
 Clone the Repository:
 git clone https://github.com/MS123-D/AI-ResumeAnalyzer.git
@@ -139,7 +151,9 @@ Run the Application
 
 streamlit run app.py
 
-***Usage***
+---
+
+## Usage
 
 Launch the Streamlit app
 
@@ -157,7 +171,9 @@ Practice answers
 
 Get feedback
 
-***Future Enhancements***
+---
+
+## Future Enhancements
 
 Answer evaluation with scoring
 
@@ -169,8 +185,9 @@ Offline question datasets
 
 Multi-language resume support
 
+---
 
-***Acknowledgements***
+## Acknowledgements
 
 Google Gemini API
 
