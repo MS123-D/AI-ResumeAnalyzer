@@ -111,12 +111,11 @@ flowchart TD
     D --> E[Technical Question Retrieval<br/>(GeeksforGeeks, InterviewBit)]
     D --> F[Behavioral Question Retrieval<br/>(The Muse)]
 
-    E --> G[Question Aggregation Layer]
+    E --> G[Question Aggregation<br/>(RAG Layer)]
     F --> G
 
-    G --> H[Context-Aware Chatbot<br/>(Gemini LLM + RAG)]
-    H --> I[Interactive Interview Preparation<br/>(Streamlit UI)]
-
+    G --> H[Context-Aware Chatbot<br/>(Gemini LLM)]
+    H --> I[Streamlit Web Interface]
 ```
 
 ***Installation & Setup***
