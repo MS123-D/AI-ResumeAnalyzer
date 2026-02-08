@@ -1,9 +1,8 @@
-### AI-Powered Resume Analyzer & Interview Preparation System
+# AI-Powered Resume Analyzer & Interview Preparation System
 
 An intelligent web application that analyzes resumes using a Retrieval-Augmented Generation (RAG) approach and generates personalized technical and behavioral interview questions.
 This project helps users prepare efficiently for interviews by combining LLM-based reasoning with real-world interview question sources.
 
----
 
 ## Problem Statement:
 
@@ -19,7 +18,7 @@ Generating tailored interview questions
 
 Providing an interactive chatbot for practice and feedback
 
----
+
 
 ## Features
 
@@ -67,7 +66,7 @@ Built with Streamlit
 
 Session-based interaction handling
 
----
+
 
 ## Tech Stack
 
@@ -91,7 +90,7 @@ Environment Management: python-dotenv
 
 APIs: Google Generative AI API
 
----
+
  
 ## System Workflow
 
@@ -109,7 +108,7 @@ Context-aware chatbot is initialized
 
 User interacts with AI for interview preparation
 
----
+
 
 ## Architecture Diagram
 
@@ -129,7 +128,7 @@ flowchart TD
     H --> I[Streamlit web interface]
 ```
 
----
+
 
 ## Installation & Setup
 
@@ -151,7 +150,6 @@ Run the Application
 
 streamlit run app.py
 
----
 
 ## Usage
 
@@ -185,9 +183,8 @@ Offline question datasets
 
 Multi-language resume support
 
----
 
-## Acknowledgements
+# Acknowledgements
 
 Google Gemini API
 
