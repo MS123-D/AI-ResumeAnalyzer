@@ -101,10 +101,11 @@ Context-aware chatbot is initialized
 
 User interacts with AI for interview preparation
 
-***Architecture Diagram***
+### 🏗️ Architecture Diagram
+
 ```mermaid
 flowchart TD
-    A[User uploads resume (PDF, DOCX)] --> B[Resume text extraction]
+    A[User uploads resume] --> B[Resume text extraction]
     B --> C[Skill extraction using Gemini LLM]
     C --> D[Identified skills]
 
@@ -114,7 +115,7 @@ flowchart TD
     E --> G[RAG aggregation layer]
     F --> G
 
-    G --> H[Context-aware chatbot]
+    G --> H[Context aware chatbot]
     H --> I[Streamlit web interface]
 ```
 
